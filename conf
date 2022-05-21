@@ -1,8 +1,0 @@
-[DEFAULT]
-auth = 0x556a8b
-
-[CHANNELS]
-omi = 996
-
-[SENTENCE]
-gm = gm
