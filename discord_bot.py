@@ -42,10 +42,26 @@ def daily():
     chat(CH_GAME, '!daily')
 
 def work():
+    chat(CH_GAME, '!work claim')
+    time.sleep(randint(5, 10))
     chat(CH_GAME, '!work')
 
-def dice(bet):
+def coins():
+    chat(CH_GAME, '!coins')
+
+def items():
+    chat(CH_GAME, '!items')
+
+def dice():
+    bet = randint(20, 200)
     chat(CH_GAME, f'!dice {bet}')
+
+def guess():
+    bet = randint(1, 10)
+    chat(CH_GAME, f'!guess {bet}')
+    for i in range(5):
+        time.sleep(randint(5, 10))
+        chat(CH_GAME, f'{randint(1, 99)}')
 
 def check_invite():
     chat(CH_INVITE, '!invites')
@@ -58,30 +74,56 @@ def morning():
         "早安",
         "大家早!",
         "Morning guys",
-        "吃早餐ㄌ"
+        "吃早餐ㄌ",
     ]
-    td = timedelta(hours=randint(0, 2), minutes=randint(0, 30))
-    time.sleep(td.seconds)
     chat(CH_GENERAL, choice(ctx))
+
 
 def afternoon():
     ctx = [
         "午安",
         "午休時間!",
         "Good after noon guyz",
+        "好餓",
     ]
-    td = timedelta(hours=randint(0, 1), minutes=randint(0, 30))
-    time.sleep(td.seconds)
     chat(CH_GENERAL, choice(ctx))
+
 
 def night():
     ctx = [
         "晚安",
         "晚上好",
         "Good night guyz",
+        "想睡...",
     ]
-    td = timedelta(hours=randint(0, 3), minutes=randint(0, 50))
-    time.sleep(td.seconds)
+    chat(CH_GENERAL, choice(ctx))
+
+
+def go_along():
+    ctx = [
+        "對",
+        "同意",
+        "hahahaha",
+        "哈",
+        "可惡...",
+        "zzz",
+        "相信O2 META!",
+        "怪怪的...",
+        "來人啊",
+        "XDDDDDD",
+        "><",
+        "==",
+        "!!!",
+        "沒事",
+        "可能吧",
+        "好像是",
+        "QQ",
+        "頂不住了...",
+        "缺$$",
+        "不太確定",
+        "sorry~",
+        "抱歉打錯ㄎㄎ",
+    ]
     chat(CH_GENERAL, choice(ctx))
 
 def test():
@@ -89,6 +131,5 @@ def test():
     print("test")
     td = timedelta(seconds=randint(0, 3))
     print("test", td)
-    time.sleep(td.seconds)
     print(f'ch: general, sleepd {td.seconds}s, msg: {msg}')
     return schedule.cancel_job
