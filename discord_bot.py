@@ -53,8 +53,12 @@ def items():
     chat(CH_GAME, '!items')
 
 def dice():
-    bet = randint(20, 200)
+    bet = randint(100, 200)
     chat(CH_GAME, f'!dice {bet}')
+
+def roulette():
+    bet = randint(100, 200)
+    chat(CH_GAME, f'!roulette {bet}')
 
 def guess():
     bet = randint(1, 10)
@@ -108,7 +112,7 @@ def go_along():
         "可惡...",
         "zzz",
         "相信O2 META!",
-        "怪怪的...",
+        # "怪怪的...",
         "來人啊",
         "XDDDDDD",
         "><",
